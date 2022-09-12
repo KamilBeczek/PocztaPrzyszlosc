@@ -1,0 +1,212 @@
+﻿<Window x:Class="PocztaPrzyszlosc.Views.ClientPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PocztaPrzyszlosc"
+        xmlns:views="clr-namespace:PocztaPrzyszlosc.Views"
+        xmlns:vms="clr-namespace:PocztaPrzyszlosc.ViewModels"
+        mc:Ignorable="d"
+        Title="ClientPage" Height="771" Width="494">
+
+    <Border Padding="15" RenderTransformOrigin="0.5,0.5">
+        <Border.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.199"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Border.RenderTransform>
+
+        <StackPanel Margin="5,0,-5,0">
+
+
+            <TextBlock Text="Sposób dostawy"  FontWeight = "Bold" FontSize="16" FontFamily="Arial" />
+            <TextBlock Margin="0 10 0 0" Text="Wybierz sposób dostawy" FontFamily="Arial" FontWeight="Normal" />
+
+            <Grid Margin="10 10 10 0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Margin="10 10 10 0" Grid.Column="0">
+
+                    <!--Column 1-->
+                    <RadioButton Margin="10 10 10 0" FlowDirection="RightToLeft" Content="Z poczty do domu" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <RadioButton Margin="10 10 10 0" FlowDirection="RightToLeft" Content="Przesyłka standardowa" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+                <StackPanel Margin="10 10 10 0" Grid.Column="1">
+                    <!--Column 1-->
+                    <RadioButton Margin="10 10 10 0" FlowDirection="RightToLeft" Content="Z poczty do poczty" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <RadioButton Margin="10 10 10 0" FlowDirection="RightToLeft" Content="Przesyłka priorytetowa" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+
+
+
+
+            </Grid>
+
+            <Grid Margin="10 15 10 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Column 1-->
+                <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <RadioButton Content="Mała" FlowDirection="RightToLeft" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Max 10 x 10 x 10 cm"/>
+                    <TextBlock Text="do 25 kg" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="15.00 zł" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <!--Column 2-->
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <RadioButton Content="Średnia" FlowDirection="RightToLeft" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Max 20 x 20 x 20 cm"/>
+                    <TextBlock Text="do 35 kg" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="25.00 zł" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <!--Column 2-->
+                <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <RadioButton Content="Duża" FlowDirection="RightToLeft" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Max 30 x 30 x 30cm"/>
+                    <TextBlock Text="do 50 kg" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="40.00 zł" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+
+            </Grid>
+
+            <TextBlock  Margin="0 20 0 0" Text="Odbiorca"  FontWeight = "Bold" FontSize="16" FontFamily="Arial" />
+            <TextBlock Margin="0 10 0 0" Text="Wpisz dane odbiorcy" FontFamily="Arial" FontWeight="Normal" />
+
+
+
+            <StackPanel Margin="0 5 0 0">
+
+                <TextBox  x:Name ="OdbiorcaImie"  Text="Wpisz imię i nazwisko lub nazwę firmy" Margin="0 0 0 0"/>
+                <Grid Margin="0 10 0 0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Column 1-->
+                    <TextBox Text="Wpisz adres e-mail" Margin="0 0 10 0" Grid.Column="0"/>
+
+                    <!--Column 2-->
+                    <TextBox Text="Podaj numer telefonu" Margin="10 0 0 0" Grid.Column="2"/>
+
+                </Grid>
+
+                <TextBox Text="Podaj ulice oraz numer mieszkania" Margin="0 10 0 0"/>
+
+                <Grid Margin="0 10 0 0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Column 1-->
+                    <TextBox Text="Kod Pocztowy" Margin="0 0 10 0" Grid.Column="0"/>
+
+                    <!--Column 2-->
+                    <TextBox Text="Miasto" Margin="10 0 0 0" Grid.Column="1"/>
+
+                </Grid>
+
+
+            </StackPanel>
+
+
+            <TextBlock  Margin="0 20 0 0" Text="Nadwaca"  FontWeight = "Bold" FontSize="16" FontFamily="Arial" />
+            <TextBlock Margin="0 10 0 0" Text="Wpisz swoje dane" FontFamily="Arial" FontWeight="Normal" />
+
+            <StackPanel Margin="0 5 0 0">
+
+                <TextBox  Text="{Binding NadawcaImie, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 0"/>
+                <Grid Margin="0 10 0 0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Column 1-->
+                    <TextBox Text="Wpisz adres e-mail" Margin="0 0 10 0" Grid.Column="0"/>
+
+                    <!--Column 2-->
+                    <TextBox Text="Podaj numer telefonu" Margin="10 0 0 0" Grid.Column="1"/>
+
+                </Grid>
+
+                <TextBox Text="Podaj ulice oraz numer mieszkania" Margin="0 10 0 0"/>
+
+                <Grid Margin="0 10 0 0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Column 1-->
+                    <TextBox Text="Kod Pocztowy" Margin="0 0 10 0" Grid.Column="0"/>
+
+                    <!--Column 2-->
+                    <TextBox Text="Miasto" Margin="10 0 0 0" Grid.Column="1"/>
+
+                </Grid>
+
+
+            </StackPanel>
+
+            <TextBlock Text="Podsumowanie" Margin="0 20 0 0" FontWeight = "Bold" FontSize="16" FontFamily="Arial" />
+
+            <Grid Margin="0 10 0 0" Height="41">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Column 1-->
+                <TextBox Text="Do Zapłaty:" Margin="0 0 10 0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+
+                <!--Column 2-->
+                <Button x:Name="Przycisk" Command="{Binding SubmitCommand}" Grid.Column="1" Content="Wyslij"></Button>
+
+
+
+
+            </Grid>
+
+            <Label x:Name="LabelFullName"/>
+
+
+
+
+
+
+
+
+
+        </StackPanel>
+
+    </Border>
+
+
+
+
+</Window>
