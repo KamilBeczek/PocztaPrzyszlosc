@@ -25,11 +25,16 @@ namespace PocztaPrzyszlosc.Models
         {
             
         }
+        public Nadawca(string nazwa)
+        {
+            Nazwa = nazwa;
+
+        }
 
 
 
-    
 
-        
+
+
     }
 }
