@@ -21,15 +21,11 @@ namespace PocztaPrzyszlosc.Models
         public int KodPocztowy { get; set; }
         public string Miasto { get; set; }
 
-        public Nadawca(int id, string nazwa, string email, string ulica, int numertelefonu, int kodpocztowy, string Miasto)
+        public Nadawca(string nazwa, string email, string ulica, int numertelefonu, int kodpocztowy, string Miasto)
         {
             
         }
-        public Nadawca(string nazwa)
-        {
-            Nazwa = nazwa;
-
-        }
+      
 
 
 

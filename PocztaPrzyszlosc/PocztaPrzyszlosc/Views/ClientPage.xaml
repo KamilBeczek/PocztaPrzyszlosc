@@ -144,14 +144,14 @@
                     </Grid.ColumnDefinitions>
 
                     <!--Column 1-->
-                    <TextBox Text="Wpisz adres e-mail" Margin="0 0 10 0" Grid.Column="0"/>
+                    <TextBox Text="{Binding NadawcaEmail, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 10 0" Grid.Column="0"/>
 
                     <!--Column 2-->
-                    <TextBox Text="Podaj numer telefonu" Margin="10 0 0 0" Grid.Column="1"/>
+                    <TextBox Text="{Binding NadawcaNumerTelefonu, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 0 0" Grid.Column="1"/>
 
                 </Grid>
 
-                <TextBox Text="Podaj ulice oraz numer mieszkania" Margin="0 10 0 0"/>
+                <TextBox Text="{Binding NadawcaAdres, UpdateSourceTrigger=PropertyChanged}" Margin="0 10 0 0"/>
 
                 <Grid Margin="0 10 0 0">
 
@@ -161,10 +161,10 @@
                     </Grid.ColumnDefinitions>
 
                     <!--Column 1-->
-                    <TextBox Text="Kod Pocztowy" Margin="0 0 10 0" Grid.Column="0"/>
+                    <TextBox Text="{Binding NadawcaKodPocztowy, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 10 0" Grid.Column="0"/>
 
                     <!--Column 2-->
-                    <TextBox Text="Miasto" Margin="10 0 0 0" Grid.Column="1"/>
+                    <TextBox Text="{Binding NadawcaMiasto, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 0 0" Grid.Column="1"/>
 
                 </Grid>
 
@@ -185,7 +185,7 @@
 
 
                 <!--Column 2-->
-                <Button x:Name="Przycisk" Command="{Binding SubmitCommand}" Grid.Column="1" Content="Wyslij"></Button>
+                <Button Command="{Binding SubmitCommand}" Grid.Column="1" Content="Submit"></Button>
 
 
 

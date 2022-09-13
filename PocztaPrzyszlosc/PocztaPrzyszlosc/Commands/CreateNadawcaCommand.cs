@@ -28,9 +28,14 @@ namespace PocztaPrzyszlosc.Commands
         public override void Execute(object parameter)
         {
             Nadawca nadawca = new Nadawca(
-                _nadawcaViewModel.NadawcaImie
+                _nadawcaViewModel.NadawcaImie,
+                _nadawcaViewModel.NadawcaEmail,
+                _nadawcaViewModel.NadawcaAdres,
+                _nadawcaViewModel.NadawcaNumerTelefonu,
+                _nadawcaViewModel.NadawcaKodPocztowy,
+                _nadawcaViewModel.NadawcaMiasto
                 );
-            
+
         }
     }
 }
