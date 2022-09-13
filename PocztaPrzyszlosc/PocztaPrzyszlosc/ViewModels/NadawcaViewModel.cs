@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PocztaPrzyszlosc.Commands;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -28,7 +29,15 @@ namespace PocztaPrzyszlosc.ViewModels
             }
         }
 
+
+
         public ICommand SubmitCommand { get; }
+
+        public NadawcaViewModel()
+        {
+            SubmitCommand = new CreateNadawcaCommand();
+        }
+
 
         
 

@@ -173,6 +173,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\CreateNadawcaCommand.cs" />
+    <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Migrations\20220912132321_Initial.cs" />
     <Compile Include="Migrations\20220912132321_Initial.designer.cs">
       <DependentUpon>20220912132321_Initial.cs</DependentUpon>
