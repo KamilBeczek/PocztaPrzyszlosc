@@ -25,6 +25,16 @@ namespace PocztaPrzyszlosc.Models
         {
             
         }
+
+        public Nadawca()
+        {
+       
+        }
+
+        public void UtworzNadawce(Nadawca nadawca)
+        {
+            Console.WriteLine();
+        }
       
 
 

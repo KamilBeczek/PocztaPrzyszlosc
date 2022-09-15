@@ -5,36 +5,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PocztaPrzyszlosc.Commands
 {
     public class CreateNadawcaCommand : CommandBase
     {
         private readonly Nadawca _nadawca;
-        private readonly NadawcaViewModel _nadawcaViewModel;
+        private readonly NadajPaczkeViewModel _nadajPaczkeViewModel;
 
-
-        public CreateNadawcaCommand(Nadawca nadawca)
+        public CreateNadawcaCommand(NadajPaczkeViewModel nadajPaczkeViewModel, Nadawca nadawca)
         {
-            _nadawca = nadawca;
-        }
-
-        public CreateNadawcaCommand(NadawcaViewModel nadawcaViewModel, Nadawca nadawca)
-        {
-            _nadawcaViewModel = nadawcaViewModel;
+            _nadajPaczkeViewModel = nadajPaczkeViewModel;
             _nadawca = nadawca;
         }
 
         public override void Execute(object parameter)
         {
             Nadawca nadawca = new Nadawca(
-                _nadawcaViewModel.NadawcaImie,
-                _nadawcaViewModel.NadawcaEmail,
-                _nadawcaViewModel.NadawcaAdres,
-                _nadawcaViewModel.NadawcaNumerTelefonu,
-                _nadawcaViewModel.NadawcaKodPocztowy,
-                _nadawcaViewModel.NadawcaMiasto
+                _nadajPaczkeViewModel.NadawcaImie,
+                _nadajPaczkeViewModel.NadawcaEmail,
+                _nadajPaczkeViewModel.NadawcaAdres,
+                _nadajPaczkeViewModel.NadawcaNumerTelefonu,
+                _nadajPaczkeViewModel.NadawcaKodPocztowy,
+                _nadajPaczkeViewModel.NadawcaMiasto
                 );
+
+            MessageBox.Show("Dodano Nadawce");
 
         }
     }

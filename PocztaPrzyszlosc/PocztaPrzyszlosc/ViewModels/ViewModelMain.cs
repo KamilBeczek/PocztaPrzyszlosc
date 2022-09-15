@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PocztaPrzyszlosc.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace PocztaPrzyszlosc.ViewModels
 {
-    public class ViewModelMain: INotifyPropertyChanged
+    public class ViewModelMain: ViewModelBase
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public ViewModelBase CurrentViewModel { get; }
 
-        protected void OnPropertyChanged(string propertyName)
+
+        public ViewModelMain(Nadawca nadawca, Odbiorca odbiorca)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            CurrentViewModel = new NadajPaczkeViewModel(nadawca, odbiorca);
         }
+       
     }
 }

@@ -175,25 +175,30 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CreateNadawcaCommand.cs" />
     <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\CreateOdbiorcaCommand.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\20220912132321_Initial.cs" />
     <Compile Include="Migrations\20220912132321_Initial.designer.cs">
       <DependentUpon>20220912132321_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\BazaDanychDbContextModelSnapshot.cs" />
-    <Compile Include="ViewModels\NadawcaViewModel.cs" />
-    <Compile Include="ViewModels\Bazadanych.cs" />
+    <Compile Include="ViewModels\NadajPaczkeViewModel.cs" />
+    <Compile Include="Helpers\Bazadanych.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelMain.cs" />
-    <Compile Include="Views\ClientPage.xaml.cs">
-      <DependentUpon>ClientPage.xaml</DependentUpon>
+    <Compile Include="Views\NadajPaczke.xaml.cs">
+      <DependentUpon>NadajPaczke.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Nadawca.cs" />
-    <Compile Include="Models\Odbiorcy.cs" />
+    <Compile Include="Models\Odbiorca.cs" />
     <Compile Include="Models\Paczki.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -222,7 +227,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\ClientPage.xaml">
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NadajPaczke.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

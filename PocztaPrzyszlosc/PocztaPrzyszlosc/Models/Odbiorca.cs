@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PocztaPrzyszlosc.Models
 {
-    public class Odbiorcy
+    public class Odbiorca
     {
         public int Id { get; set; }
         public string Nazwa { get; set; }
@@ -15,6 +15,16 @@ namespace PocztaPrzyszlosc.Models
         public int NumerTeleofnu { get; set; }
         public int KodPocztowy { get; set; }
         public string Miasto { get; set; }
+
+        public Odbiorca(string nazwa, string email, string ulica, int numertelefonu, int kodpocztowy, string Miasto)
+        {
+
+        }
+
+        public Odbiorca()
+        {
+            
+        }
 
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace PocztaPrzyszlosc.ViewModels
 {
-    public class NadawcaViewModel : ViewModelMain 
+    public class NadajPaczkeViewModel : ViewModelBase
     {
         private string _nadwacaImie;
         private string _nadawcaEmail;
@@ -19,6 +19,14 @@ namespace PocztaPrzyszlosc.ViewModels
         private string _nadawcaAdres;
         private int _nadawcaKodPocztowy;
         private string _nadawcaMiasto;
+
+        private string _odbiorcaImie;
+        private string _odbiorcaEmail;
+        private int _odbiorcaNumerTelefonu;
+        private string _odbiorcaAdres;
+        private int _odbiorcaKodPocztowy;
+        private string _odbiorcaMiasto;
+
 
 
         public string NadawcaImie
@@ -109,13 +117,103 @@ namespace PocztaPrzyszlosc.ViewModels
 
         }
 
+        public string OdbiorcaImie
+        {
+            get
+            {
+                return _odbiorcaImie;
+            }
+
+            set
+            {
+
+                _odbiorcaImie = value;
+                OnPropertyChanged(nameof(OdbiorcaImie));
+            }
+        }
+
+
+        public string OdbiorcaEmail
+        {
+            get
+            {
+                return _odbiorcaEmail;
+            }
+
+            set
+            {
+
+                _odbiorcaEmail = value;
+                OnPropertyChanged(nameof(OdbiorcaEmail));
+            }
+        }
+        public int OdbiorcaNumerTelefonu
+        {
+            get
+            {
+                return _odbiorcaNumerTelefonu;
+            }
+
+            set
+            {
+
+                _odbiorcaNumerTelefonu = value;
+                OnPropertyChanged(nameof(OdbiorcaNumerTelefonu));
+            }
+        }
+        public string OdbiorcaAdres
+        {
+            get
+            {
+                return _odbiorcaAdres;
+            }
+
+            set
+            {
+
+                _odbiorcaAdres = value;
+                OnPropertyChanged(nameof(OdbiorcaAdres));
+            }
+        }
+        public int OdbiorcaKodPocztowy
+        {
+            get
+            {
+                return _odbiorcaKodPocztowy;
+            }
+
+            set
+            {
+
+                _odbiorcaKodPocztowy = value;
+                OnPropertyChanged(nameof(OdbiorcaKodPocztowy));
+            }
+        }
+        public string OdbiorcaMiasto
+        {
+            get
+            {
+                return _odbiorcaMiasto;
+            }
+
+            set
+            {
+
+                _odbiorcaMiasto = value;
+                OnPropertyChanged(nameof(OdbiorcaMiasto));
+            }
+
+        }
+
 
 
         public ICommand SubmitCommand { get; }
 
-        public NadawcaViewModel(Nadawca nadawca)
+        public NadajPaczkeViewModel(Nadawca nadawca, Odbiorca odbiorca)
         {
             SubmitCommand = new CreateNadawcaCommand(this, nadawca);
+            SubmitCommand = new CreateOdbiorcaCommand(this, odbiorca);
+
         }
 
 
