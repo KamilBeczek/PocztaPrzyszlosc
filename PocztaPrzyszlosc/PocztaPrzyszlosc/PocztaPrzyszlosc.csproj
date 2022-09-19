@@ -176,6 +176,7 @@
     <Compile Include="Commands\CreateNadawcaCommand.cs" />
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\CreateOdbiorcaCommand.cs" />
+    <Compile Include="Commands\NavigateCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -184,14 +185,19 @@
       <DependentUpon>20220912132321_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\BazaDanychDbContextModelSnapshot.cs" />
+    <Compile Include="Stores\NavigationStore.cs" />
     <Compile Include="ViewModels\NadajPaczkeViewModel.cs" />
     <Compile Include="Helpers\Bazadanych.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\PaczkiViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelMain.cs" />
+    <Compile Include="Views\ListaPaczek.xaml.cs">
+      <DependentUpon>ListaPaczek.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NadajPaczke.xaml.cs">
       <DependentUpon>NadajPaczke.xaml</DependentUpon>
     </Compile>
@@ -228,6 +234,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListaPaczek.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

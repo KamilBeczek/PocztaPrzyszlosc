@@ -1,4 +1,6 @@
-﻿using PocztaPrzyszlosc.Models;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using PocztaPrzyszlosc.Models;
+using PocztaPrzyszlosc.Stores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,13 +12,20 @@ namespace PocztaPrzyszlosc.ViewModels
 {
     public class ViewModelMain: ViewModelBase
     {
-        public ViewModelBase CurrentViewModel { get; }
+        private readonly NavigationStore _navigationStore;
+
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
 
-        public ViewModelMain(Nadawca nadawca, Odbiorca odbiorca)
+        public ViewModelMain(NavigationStore navigationStore)
         {
-            CurrentViewModel = new NadajPaczkeViewModel(nadawca, odbiorca);
+            _navigationStore = navigationStore;
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
-       
+
+        private void OnCurrentViewModelChanged()
+        {
+            OnPropertyChanged(nameof(CurrentViewModel));
+        }
     }
 }

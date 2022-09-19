@@ -1,5 +1,6 @@
 ﻿using PocztaPrzyszlosc.Commands;
 using PocztaPrzyszlosc.Models;
+using PocztaPrzyszlosc.Stores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -208,20 +209,15 @@ namespace PocztaPrzyszlosc.ViewModels
 
 
         public ICommand SubmitCommand { get; }
+        public ICommand AdminCommand { get; }
 
-        public NadajPaczkeViewModel(Nadawca nadawca, Odbiorca odbiorca)
+        public NadajPaczkeViewModel(Nadawca nadawca, Odbiorca odbiorca, NavigationStore navigationStore)
         {
             SubmitCommand = new CreateNadawcaCommand(this, nadawca);
             SubmitCommand = new CreateOdbiorcaCommand(this, odbiorca);
+            AdminCommand = new NavigateCommand(navigationStore);
 
         }
-
-
-        
-
-
-    
-
 
     }
 }

@@ -1,4 +1,6 @@
-﻿using PocztaPrzyszlosc.Models;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using PocztaPrzyszlosc.Models;
+using PocztaPrzyszlosc.Stores;
 using PocztaPrzyszlosc.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -18,16 +20,21 @@ namespace PocztaPrzyszlosc
         private readonly Nadawca _nadawca;
         private readonly Odbiorca _odbiorca;
 
+        private readonly NavigationStore _navigationStore;
+
         public App()
         {
             _odbiorca = new Odbiorca();
             _nadawca = new Nadawca();
+            _navigationStore = new NavigationStore();
         }
         protected override void OnStartup(StartupEventArgs e)
         {
+            _navigationStore.CurrentViewModel = new NadajPaczkeViewModel(_nadawca, _odbiorca, _navigationStore);
+
             MainWindow = new MainWindow()
             {
-                DataContext = new ViewModelMain(_nadawca, _odbiorca)
+                DataContext = new ViewModelMain(_navigationStore)
             };
 
             MainWindow.Show();
