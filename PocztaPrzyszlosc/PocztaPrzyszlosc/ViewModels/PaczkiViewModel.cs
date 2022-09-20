@@ -1,4 +1,5 @@
 ﻿using PocztaPrzyszlosc.Commands;
+using PocztaPrzyszlosc.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,12 @@ namespace PocztaPrzyszlosc.ViewModels
     {
         public ICommand NadajPaczkeCommand { get; }
 
-        public PaczkiViewModel()
+        public PaczkiViewModel(NavigationStore navigationStore, Func<NadajPaczkeViewModel> nadajPaczkeViewModel)
         {
-           
+
+            NadajPaczkeCommand = new NavigateCommand(navigationStore, nadajPaczkeViewModel);
+
+
         }
     }
 }

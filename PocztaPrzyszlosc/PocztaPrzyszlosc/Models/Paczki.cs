@@ -8,11 +8,11 @@ namespace PocztaPrzyszlosc.Models
 {
     public class Paczki
     {
-        public int Id { get; set; }
-        public bool PocztaDoDomu { get; set; }
-        public bool PocztaDoPoczty { get; set; }
-        public bool Priorytet { get; set; }
-        public Rozmiary Rozmiar { get; set; }
+        public int Id { get; }
+        public bool PocztaDoDomu { get; }
+        public bool PocztaDoPoczty { get; }
+        public bool Priorytet { get; }
+        public Rozmiary Rozmiar { get; }
 
 
     }

@@ -173,21 +173,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\CreateNadawcaCommand.cs" />
+    <Compile Include="Commands\ASyncCommandBase.cs" />
+    <Compile Include="Commands\SubmitCommand.cs" />
     <Compile Include="Commands\CommandBase.cs" />
-    <Compile Include="Commands\CreateOdbiorcaCommand.cs" />
     <Compile Include="Commands\NavigateCommand.cs" />
+    <Compile Include="DBContext\OdbiorcaDesignTimeDbContextFactory.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20220912132321_Initial.cs" />
-    <Compile Include="Migrations\20220912132321_Initial.designer.cs">
-      <DependentUpon>20220912132321_Initial.cs</DependentUpon>
+    <Compile Include="DTOs\OdbiorcaDTO.cs" />
+    <Compile Include="Migrations\20220919230936_Intial.cs" />
+    <Compile Include="Migrations\20220919230936_Intial.designer.cs">
+      <DependentUpon>20220919230936_Intial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\BazaDanychDbContextModelSnapshot.cs" />
+    <Compile Include="Migrations\PocztaPrzyszloscDbContextModelSnapshot.cs" />
+    <Compile Include="Services\Creator\DatabaseOdbiorcaCreator.cs" />
+    <Compile Include="Services\Creator\IPocztaPrzyszloscCreator.cs" />
+    <Compile Include="Services\DatabasePocztaProvider.cs" />
+    <Compile Include="Services\IOdbiorcaProvider.cs" />
+    <Compile Include="Services\PocztaPrzyszloscDbContextFactory.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Compile Include="ViewModels\NadajPaczkeViewModel.cs" />
-    <Compile Include="Helpers\Bazadanych.cs" />
+    <Compile Include="DBContext\PocztaPrzyszloscDbContext.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

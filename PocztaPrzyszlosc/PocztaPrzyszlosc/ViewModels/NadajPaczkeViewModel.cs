@@ -211,11 +211,10 @@ namespace PocztaPrzyszlosc.ViewModels
         public ICommand SubmitCommand { get; }
         public ICommand AdminCommand { get; }
 
-        public NadajPaczkeViewModel(Nadawca nadawca, Odbiorca odbiorca, NavigationStore navigationStore)
+        public NadajPaczkeViewModel(Nadawca nadawca, Odbiorca odbiorca, NavigationStore navigationStore, Func<PaczkiViewModel> paczkiViewModel)
         {
-            SubmitCommand = new CreateNadawcaCommand(this, nadawca);
-            SubmitCommand = new CreateOdbiorcaCommand(this, odbiorca);
-            AdminCommand = new NavigateCommand(navigationStore);
+            SubmitCommand = new SubmitCommand(this, nadawca, odbiorca);
+            AdminCommand = new NavigateCommand(navigationStore, paczkiViewModel);
 
         }
 
