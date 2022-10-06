@@ -18,6 +18,7 @@ namespace PocztaPrzyszlosc.Commands
         {
             _navigationStore = navigationStore;
             _createViewModel = createViewModel;
+            int test = 1;
         }
 
         public override void Execute(object parameter)
